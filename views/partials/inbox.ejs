@@ -1,0 +1,36 @@
+
+            
+    <!-- need to add the chats here -->
+  <div class="chat_list active_chat">
+    <div class="chat_people">
+      <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+      <div class="chat_ib">
+        <h5> Raja<span class="chat_date">Dec 25</span></h5>
+        <p>Test, <%= JSON.stringify(data) %>.</p>
+      </div>
+    </div>
+  </div>
+ 
+  <% createUser = (name,text)=>{
+  Name = name
+  firstText = text
+  return `<div class="chat_list">
+    <div class="chat_people">
+      <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+      <div class="chat_ib">
+        <h5> ${Name} <span class="chat_date">Dec 25</span></h5>
+        <p>${firstText}</p>
+      </div>
+    </div>
+  </div>`
+    }
+   %>
+   <% for(const key in data.messages){ %>
+
+   <%- 
+    createUser(key,data.messages[key])
+   %>
+   <% } %>
+   
+
+
